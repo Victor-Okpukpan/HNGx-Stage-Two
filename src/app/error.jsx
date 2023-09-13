@@ -6,8 +6,10 @@ export default function Error({ error, reset }) {
     }, [error]);
   return (
     <div className="text-center mt-10">
-        <h1>Something went wrong</h1>
-        <button className="hover:text-amber-600" onClick={() => reset()}>Try Again</button>
+        <h1 className="text-4xl">Something went wrong!</h1>
+        <div className="">
+        <button className="py-1 px-3 bg-rose-700 rounded-lg text-white mt-5" onClick={() => reset()}>Try Again</button>
+        </div>
     </div>
   )
 }

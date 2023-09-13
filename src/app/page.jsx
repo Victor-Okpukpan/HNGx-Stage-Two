@@ -1,7 +1,8 @@
 import HeaderComponent from "@/components/HeaderComponent";
 import Image from "next/image";
 import { HiPlay } from "react-icons/hi";
-import Card from "@/components/Card";
+import Results from "@/components/Results";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
   const res = await fetch(
@@ -14,7 +15,7 @@ export default async function Home() {
   const data = await res.json();
   const results = data.results.slice(0, 10);
   return (
-    <main className="">
+    <main className="relative pb-56">
       <HeaderComponent />
       <div
         style={{
@@ -58,8 +59,11 @@ export default async function Home() {
       </div>
 
       <section className="max-w-screen-lg mx-auto mt-10 px-3 xl:px-0">
-        <Card results={results} />
+        <h1 className="text-4xl font-bold font-dm-sans">Featured Movies</h1>
+        <Results results={results} />
       </section>
+
+      <Footer />
     </main>
   );
 }

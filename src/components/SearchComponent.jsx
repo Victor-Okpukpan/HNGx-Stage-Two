@@ -1,9 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
 export default function SearchComponent() {
+  const pathName = usePathname();
     const router = useRouter();
     const [ searchTerm, setSearchTerm ] = useState("");
     
@@ -13,7 +14,7 @@ export default function SearchComponent() {
     }
   return (
     <form onSubmit={searchHandler} className="flex items-center border-2 border-gray-300 flex-grow py-2 px-3 rounded-md">
-        <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="What do you want to watch?" className="flex-1 focus:outline-none bg-transparent text-white placeholder:text-white" />
+        <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="What do you want to watch?" className={`flex-1 focus:outline-none bg-transparent  ${pathName === "/" && "placeholder:text-white text-white"}`} />
         <AiOutlineSearch onClick={searchHandler} className="text-lg cursor-pointer" />
     </form>
   )

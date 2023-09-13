@@ -1,6 +1,6 @@
-import Card from "@/components/Card";
+import Footer from "@/components/Footer";
 import HeaderComponent from "@/components/HeaderComponent";
-import SearchComponent from "@/components/SearchComponent";
+import Results from "@/components/Results";
 
 export default async function SearchPage({ params }) {
   const res = await fetch(
@@ -16,14 +16,15 @@ export default async function SearchPage({ params }) {
   const results = data.results;
   return (
     <div className="px-3 xl:px-0 relative max-w-screen-lg mx-auto">
-      <div className="bg-black">
-        <HeaderComponent />
-      </div>
+      <HeaderComponent />
+
       {results && results.length === 0 && (
-        <h1 className="text-center pt-6">No results found</h1>
+        <h1 className="text-center pt-36 text-4xl font-bold uppercase">No results found!</h1>
       )}
 
-      <div className="pt-40">{results && <Card results={results} />}</div>
+      <div className="pt-40 pb-56">{results && <Results results={results} />}</div>
+
+      <Footer />
     </div>
   );
 }

@@ -26,8 +26,9 @@ export default function MovieDetailPage() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-9 max-w-screen-lg mx-auto px-3 xl:px-0">
-        <section className="py-8">
+      <div className="flex flex-col md:flex-row gap-9 max-w-screen-lg mx-auto px-3 xl:px-0 font-poppins">
+        {/* Navigation */}
+        <nav className="py-8">
           <div className="flex items-center space-x-6">
             <Image src="/tv.svg" width={50} height={50} alt="Logo" />
             <h1 className="text-2xl font-bold">MovieBox</h1>
@@ -69,7 +70,9 @@ export default function MovieDetailPage() {
               </div>
             </div>
           </div>
-        </section>
+        </nav>
+
+        {/* Movie Details */}
         <section className="basis-3/4 py-9">
           <div
             style={{
@@ -83,11 +86,17 @@ export default function MovieDetailPage() {
 
           <div className="mt-3">
             <h2 className="text-2xl text-[#404040] font-medium mb-3">
-              <span data-testid="movie-title">{data.original_title}</span> &middot;{" "}
-              <span data-testid="movie-release-date">{new Date(data.release_date).toUTCString()}</span> &middot;{" "}
-              <span data-testid="movie-runtime">{data.runtime}</span> mins
+              <span data-testid="movie-title">{data.original_title}</span>{" "}
+              &middot;{" "}
+              <span data-testid="movie-release-date">
+                {new Date(data.release_date).toUTCString()}
+              </span>{" "}
+              &middot; <span data-testid="movie-runtime">{data.runtime}</span>{" "}
+              mins
             </h2>
-            <p data-testid="movie-overview" className="text-xl font-[#333]">{data.overview}</p>
+            <p data-testid="movie-overview" className="text-xl font-[#333]">
+              {data.overview}
+            </p>
           </div>
         </section>
       </div>
