@@ -63,7 +63,7 @@ export default function Card({ result }) {
         <div className="my-2 flex justify-between">
           {/* IMDb */}
           <div className="flex items-center space-x-2">
-            <Image src="imdb.svg" alt="imdb Logo" width={50} height={30} />
+            <Image src="/imdb.svg" alt="imdb Logo" width={50} height={30} />
             <p className="text-gray-900 text-sm">{result.vote_average}/10</p>
           </div>
           {/* Popularity */}

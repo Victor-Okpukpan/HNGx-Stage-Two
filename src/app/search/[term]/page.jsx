@@ -23,14 +23,14 @@ export default async function SearchPage({ params }) {
       {/* HeaderComponent */}
       <HeaderComponent />
 
-      {/* Display a message if there are no results */}
+      {/* Displays a message if there are no results */}
       {results && results.length === 0 && (
         <h1 className="text-center pt-36 text-4xl font-bold uppercase">
           No results found!
         </h1>
       )}
 
-      {/* Rendered the Results component with the 'results' data */}
+      {/* Renders the Results component with the 'results' data */}
       <div className="pt-40 pb-56">
         {results && <Results results={results} />}
       </div>
