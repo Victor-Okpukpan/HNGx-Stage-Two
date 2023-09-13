@@ -1,5 +1,6 @@
+/* This line imports fonts from Google Fonts. It includes two font families: "DM Sans" and "Poppins," with various font weights and styles. */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Poppins:wght@400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind base; /* Imports base styles, such as typography and background colors. */
+@tailwind components; /* Includes the pre-defined component styles. */
+@tailwind utilities; /* Includes the utility classes Tailwind provides.*/
