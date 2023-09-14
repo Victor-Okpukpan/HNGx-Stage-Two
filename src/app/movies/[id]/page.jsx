@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 import { FiLogOut } from "react-icons/fi";
 
 // MovieDetailPage component
-export default function MovieDetailPage() {
+export default function MovieDetailPage({params}) {
   const router = useRouter();
   // Gets the current pathname
   const pathName = usePathname();
   // Extracts the movie ID from the pathname
-  const id = pathName.split("/").pop();
+  const id = params.id;
   // Initializes state to store movie data
   const [data, setData] = useState([]);
   
