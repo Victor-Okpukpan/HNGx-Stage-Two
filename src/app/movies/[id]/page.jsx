@@ -45,12 +45,12 @@ export default function MovieDetailPage({params}) {
           {/* Navigation menu */}
           <ul className="mt-5">
             {/* Home */}
-            <li onClick={() => router.push("/")} className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A]">
+            <li onClick={() => router.push("/")} className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] cursor-pointer">
               Home
             </li>
             {/* Movies */}
             <li
-              className={`text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] ${
+              className={`text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] cursor-pointer ${
                 pathName.includes("movies")
                   ? "border-r-[#BE123C] border-r-4 bg-[#BE123C1A]"
                   : ""
@@ -59,11 +59,11 @@ export default function MovieDetailPage({params}) {
               Movies
             </li>
             {/* TV Series */}
-            <li className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] ">
+            <li className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] cursor-pointer">
               TV Series
             </li>
             {/* Upcoming */}
-            <li className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] ">
+            <li className="text-xl text-[#666] font-semibold px-14 py-8 hover:bg-[#BE123C1A] cursor-pointer">
               Upcoming
             </li>
           </ul>
